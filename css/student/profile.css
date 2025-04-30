@@ -1,0 +1,494 @@
+/* === PROFILE PAGE STYLES === */
+.profile-main {
+    padding: 25px;
+    margin-top: 70px;
+    color: var(--text-clr);
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile-identity {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.avatar-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-clr);
+}
+
+.avatar-edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background-color: var(--accent-clr);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.avatar-edit-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+.profile-info h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.student-id {
+    display: inline-block;
+    background-color: rgba(78, 115, 223, 0.1);
+    color: var(--accent-clr);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.student-program {
+    color: var(--secondary-text-clr);
+    margin-bottom: 15px;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-clr);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--secondary-text-clr);
+}
+
+.profile-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.btn.primary {
+    background-color: var(--accent-clr);
+    color: white;
+    border: none;
+}
+
+.btn.primary:hover {
+    background-color: #3a5ccc;
+}
+
+.btn.secondary {
+    background-color: white;
+    color: var(--accent-clr);
+    border: 1px solid var(--accent-clr);
+}
+
+.btn.secondary:hover {
+    background-color: rgba(78, 115, 223, 0.1);
+}
+
+/* Profile Tabs */
+.profile-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--line-clr);
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+    color: var(--secondary-text-clr);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    color: var(--accent-clr);
+    border-bottom-color: var(--accent-clr);
+}
+
+.tab-btn:hover:not(.active) {
+    color: var(--text-clr);
+}
+
+/* Tab Content */
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Profile Sections */
+.profile-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--accent-clr);
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--secondary-text-clr);
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    font-weight: 500;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status.good {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.social-link.linkedin {
+    background-color: rgba(10, 102, 194, 0.1);
+    color: #0a66c2;
+}
+
+.social-link.github {
+    background-color: rgba(36, 41, 46, 0.1);
+    color: #24292e;
+}
+
+.social-link:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Courses List */
+.courses-list {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--line-clr);
+}
+
+.course-item:last-child {
+    border-bottom: none;
+}
+
+.course-code {
+    font-weight: 700;
+    color: var(--accent-clr);
+    min-width: 60px;
+}
+
+.course-details {
+    flex-grow: 1;
+    padding: 0 15px;
+}
+
+.course-details h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.course-details p {
+    font-size: 0.85rem;
+    color: var(--secondary-text-clr);
+}
+
+.course-grade {
+    font-weight: 700;
+    color: var(--accent-clr);
+}
+
+/* Documents List */
+.documents-list {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--line-clr);
+}
+
+.document-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(78, 115, 223, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.document-icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-clr);
+}
+
+.document-details {
+    flex-grow: 1;
+}
+
+.document-details h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.document-details p {
+    font-size: 0.85rem;
+    color: var(--secondary-text-clr);
+}
+
+.document-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.document-action:hover {
+    background-color: var(--hover-clr);
+}
+
+.document-action svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-clr);
+}
+
+/* Settings Form */
+.settings-form {
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--secondary-text-clr);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--line-clr);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-clr);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    
+    .profile-identity {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-stats {
+        justify-content: center;
+    }
+    
+    .profile-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .profile-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .course-grade {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-main {
+        padding: 15px;
+    }
+    
+    .profile-section {
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

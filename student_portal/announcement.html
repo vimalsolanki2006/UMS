@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcement | Student Dashboard</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/student.css">
+    <link rel="stylesheet" href="../css/student/announcement.css">
+</head>
+<body>
+    <div id="sidebar-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav id="top-nav">
+        <div class="nav-content">
+            <button class="nav-menu-btn" onclick="toggleSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                </svg>
+                <span>Menu</span>
+            </button>
+            <span class="nav-title">Announcements</span>
+            <button class="logout-btn" onclick="window.location.href='../index.html'">Logout</button>
+        </div>
+    </nav>
+    
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <a href="../dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="calender.html">
+                    <span>Academic Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="Time_Table.html">
+                    <span>Timetable</span>
+                </a>
+            </li>
+            <li>
+                <a href="attedance.html">
+                    <span>Attendance</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <span>Examination</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/>
+                    </svg>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="exam_schedule.html">Exam Schedule</a></li>  
+                        <li><a href="exam_result.html">Exam Result</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li class="active">
+                <a href="announcement.html">
+                    <span>Announcement</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="announcement-main">
+        <div class="announcement-container">
+            <h1>Announcements</h1>
+            
+            <!-- Announcement Filter -->
+            <div class="announcement-filter">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="academic">Academic</option>
+                        <option value="events">Events</option>
+                        <option value="examination">Examination</option>
+                        <option value="important">Important</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="date-filter">Date:</label>
+                    <select id="date-filter" class="filter-select">
+                        <option value="recent">Most Recent</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="older">Older</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Announcement List -->
+            <div class="announcement-list">
+                <!-- Announcement Item 1 -->
+                <div class="announcement-item important">
+                    <div class="announcement-badge">IMPORTANT</div>
+                    <div class="announcement-content">
+                        <h2>Midterm Examination Schedule Released</h2>
+                        <div class="announcement-meta">
+                            <span class="announcement-date">Posted today at 09:30 AM</span>
+                            <span class="announcement-category">Academic Office</span>
+                        </div>
+                        <p class="announcement-text">The midterm examination schedule for all courses has been published on the portal. Please check your personalized schedule and report any conflicts to your department coordinator by Friday.</p>
+                        <div class="announcement-actions">
+                            <button class="view-btn">View Details</button>
+                            <a href="" class="download-link">Download Schedule (PDF)</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Announcement Item 2 -->
+                <div class="announcement-item academic">
+                    <div class="announcement-badge">ACADEMIC</div>
+                    <div class="announcement-content">
+                        <h2>Library Closure for Maintenance</h2>
+                        <div class="announcement-meta">
+                            <span class="announcement-date">Posted yesterday at 02:15 PM</span>
+                            <span class="announcement-category">Library Services</span>
+                        </div>
+                        <p class="announcement-text">The main library will be closed this Saturday (April 13) for scheduled maintenance work. Digital resources remain available through the online portal. Regular hours will resume on Sunday.</p>
+                        <div class="announcement-actions">
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Announcement Item 3 -->
+                <div class="announcement-item events">
+                    <div class="announcement-badge">EVENT</div>
+                    <div class="announcement-content">
+                        <h2>Annual Tech Fest 2025</h2>
+                        <div class="announcement-meta">
+                            <span class="announcement-date">Posted 2 days ago at 11:45 AM</span>
+                            <span class="announcement-category">Student Activities</span>
+                        </div>
+                        <p class="announcement-text">Registrations are now open for the Annual Tech Fest happening on April 20-22. Participate in coding competitions, robotics challenges, and tech talks. Last date to register is April 15.</p>
+                        <div class="announcement-actions">
+                            <button class="view-btn">View Details</button>
+                            <a href="" class="download-link">Brochure (PDF)</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Announcement Item 4 -->
+                <div class="announcement-item examination">
+                    <div class="announcement-badge">EXAMINATION</div>
+                    <div class="announcement-content">
+                        <h2>Final Exam Guidelines</h2>
+                        <div class="announcement-meta">
+                            <span class="announcement-date">Posted 3 days ago at 04:30 PM</span>
+                            <span class="announcement-category">Examination Cell</span>
+                        </div>
+                        <p class="announcement-text">Important guidelines for the upcoming final examinations have been published. All students must review the examination rules protocols before appearing for exams.</p>
+                        <div class="announcement-actions">
+                            <button class="view-btn">View Details</button>
+                            <a href="" class="download-link">Guidelines Document</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Announcement Item 5 -->
+                <div class="announcement-item academic">
+                    <div class="announcement-badge">ACADEMIC</div>
+                    <div class="announcement-content">
+                        <h2>Course Registration for Next Semester</h2>
+                        <div class="announcement-meta">
+                            <span class="announcement-date">Posted 1 week ago at 10:00 AM</span>
+                            <span class="announcement-category">Registrar's Office</span>
+                        </div>
+                        <p class="announcement-text">The course registration portal for Semester 3 will open on April 25 at 9:00 AM. Meet with your academic advisor to discuss your course selections before registration begins.</p>
+                        <div class="announcement-actions">
+                            <button class="view-btn">View Details</button>
+                            <a href="" class="download-link">Course Catalog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn disabled">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+                    </svg>
+                    Previous
+                </button>
+                <div class="page-numbers">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="page-dots">...</span>
+                    <button class="page-btn">5</button>
+                </div>
+                <button class="pagination-btn">
+                    Next
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/announcement.js"></script>
+</body>
+</html>

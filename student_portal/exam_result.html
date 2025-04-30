@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Results | Student Dashboard</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/student/exam_result.css">
+</head>
+<body>
+    <div id="sidebar-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav id="top-nav">
+        <div class="nav-content">
+            <button class="nav-menu-btn" onclick="toggleSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                </svg>
+                <span>Menu</span>
+            </button>
+            <span class="nav-title">Exam Results</span>
+            <button class="logout-btn" onclick="window.location.href='../index.html'">Logout</button>
+        </div>
+    </nav>
+    
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <a href="../dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="calender.html">
+                    <span>Academic Calander</span>
+                </a>
+            </li>
+            <li>
+                <a href="Time_Table.html">
+                    <span>Timetable</span>
+                </a>
+            </li>
+            <li>
+                <a href="attedance.html">
+                    <span>Attendance</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn active">
+                    <span>Examination</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/>
+                    </svg>
+                </button>
+                <ul class="sub-menu show">
+                    <div>
+                        <li><a href="exam_schedule.html">Exam Schedule</a></li>  
+                        <li><a href="exam_result.html"class="active">Exam Result</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <a href="announcement.html">
+                    <span>Announcement</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="exam-result-main">
+        <div class="exam-result-container">
+            <h1>Exam Result</h1>
+            
+            <!-- Exam Type Navigation -->
+            <nav class="result-type-nav">
+                <button class="result-type-btn active" data-result-type="external">External Results</button>
+                <button class="result-type-btn" data-result-type="internal">Internal Assessment</button>
+            </nav>
+            
+            <!-- Result Content -->
+            <div class="result-content">
+                <!-- External Results Section -->
+                <section id="external-results" class="result-section active">
+                    <div class="result-header">
+                        <h2>BT2410 - B.Tech. Sem-I Regular Exam Jan 2025</h2>
+                        <div class="result-status success">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span>You have passed all the subjects</span>
+                        </div>
+                    </div>
+                    
+                    <div class="student-info">
+                        <div class="info-item">
+                            <span class="info-label">Seat No.</span>
+                            <span class="info-value">CE139</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Name</span>
+                            <span class="info-value">SOLANKI VIMAL DILIPBHAI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-summary">
+                        <div class="summary-card">
+                            <span class="summary-label">SPI</span>
+                            <span class="summary-value">9.23</span>
+                        </div>
+                        <div class="summary-card">
+                            <span class="summary-label">CPI</span>
+                            <span class="summary-value">-</span>
+                        </div>
+                        <div class="summary-card">
+                            <span class="summary-label">Current Backlog</span>
+                            <span class="summary-value">0</span>
+                        </div>
+                        <div class="summary-card">
+                            <span class="summary-label">Total Backlog</span>
+                            <span class="summary-value">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="result-table-container">
+                        <table class="result-table">
+                            <thead>
+                                <tr>
+                                    <th>Sr.</th>
+                                    <th>Subject Code</th>
+                                    <th>Subject</th>
+                                    <th>Credit</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>23BS101</td>
+                                    <td>MATHEMATICS - I</td>
+                                    <td>4.00</td>
+                                    <td class="grade-aa">AA</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>23ES104</td>
+                                    <td>BASIC ELECTRICAL ENGINEERING</td>
+                                    <td>5.00</td>
+                                    <td class="grade-ab">AB</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>23ES105</td>
+                                    <td>PROGRAMMING FOR PROBLEM SOLVING I</td>
+                                    <td>5.50</td>
+                                    <td class="grade-ab">AB</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>23ES106</td>
+                                    <td>ENGINEERING GRAPHICS & DESIGN</td>
+                                    <td>3.00</td>
+                                    <td class="grade-aa">AA</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>23ES107</td>
+                                    <td>SOFTWARE WORKSHOP</td>
+                                    <td>1.00</td>
+                                    <td class="grade-aa">AA</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>24HS102</td>
+                                    <td>YOGA AND WELLNESS</td>
+                                    <td>3.00</td>
+                                    <td class="grade-bb">BB</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button class="download-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                            </svg>
+                            Download Mark Sheet
+                        </button>
+                    </div>
+                </section>
+                
+                <!-- Internal Assessment Section -->
+                <section id="internal-results" class="result-section">
+                    <div class="internal-header">
+                        <h2>Internal Assessment Summary</h2>
+                    </div>
+
+                    <div class="student-info">
+                        <div class="info-item">
+                            <span class="info-label">Seat No.</span>
+                            <span class="info-value">CE136</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Name</span>
+                            <span class="info-value">SOLANKI VIMAL DILIPBHAI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="semester-selector">
+                        <button class="semester-btn active" data-semester="1">Semester 1</button>
+                        <button class="semester-btn" data-semester="2">Semester 2</button>
+                    </div>
+                    
+                    <!-- Semester 1 Content -->
+                    <div id="semester1-content" class="semester-content">
+                        <div class="internal-table-container">
+                            <table class="internal-table">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Sr.</th>
+                                        <th rowspan="2">Code</th>
+                                        <th rowspan="2">Course</th>
+                                        <th colspan="3">SESSIONAL 1</th>
+                                        <th colspan="3">SESSIONAL 2</th>
+                                        <th colspan="3">SESSIONAL 3</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Theory</th>
+                                        <th>Practical</th>
+                                        <th>Total</th>
+                                        <th>Theory</th>
+                                        <th>Practical</th>
+                                        <th>Total</th>
+                                        <th>Theory</th>
+                                        <th>Practical</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>23BS101</td>
+                                        <td>MATHEMATICS - I</td>
+                                        <td>34/36.00</td>
+                                        <td>-</td>
+                                        <td>34/36</td>
+                                        <td>32/36.00</td>
+                                        <td>-</td>
+                                        <td>32/36</td>
+                                        <td>34/36.00</td>
+                                        <td>-</td>
+                                        <td>34/36</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>23ES104</td>
+                                        <td>BASIC ELECTRICAL ENGINEERING</td>
+                                        <td>29/36.00</td>
+                                        <td>-</td>
+                                        <td>29/36</td>
+                                        <td>31/36.00</td>
+                                        <td>-</td>
+                                        <td>31/36</td>
+                                        <td>29/36.00</td>
+                                        <td>-</td>
+                                        <td>29/36</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>23ES105</td>
+                                        <td>PROGRAMMING FOR PROBLEM SOLVING I</td>
+                                        <td>25/36.00</td>
+                                        <td>-</td>
+                                        <td>25/36</td>
+                                        <td>18/36.00</td>
+                                        <td>-</td>
+                                        <td>18/36</td>
+                                        <td>22/36.00</td>
+                                        <td>-</td>
+                                        <td>22/36</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Semester 2 Content -->
+                    <div id="semester2-content" class="semester-content" style="display: none;">
+                        <div class="internal-table-container">
+                            <table class="internal-table">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Sr.</th>
+                                        <th rowspan="2">Code</th>
+                                        <th rowspan="2">Course</th>
+                                        <th colspan="3">SESSIONAL 1</th>
+                                        <th colspan="3">SESSIONAL 2</th>
+                                        <th colspan="3">SESSIONAL 3</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Theory</th>
+                                        <th>Practical</th>
+                                        <th>Total</th>
+                                        <th>Theory</th>
+                                        <th>Practical</th>
+                                        <th>Total</th>
+                                        <th>Theory</th>
+                                        <th>Practical</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>23BS201</td>
+                                        <td>MATHEMATICS-II</td>
+                                        <td>35/36.00</td>
+                                        <td>-</td>
+                                        <td>35/36</td>
+                                        <td>26/36.00</td>
+                                        <td>-</td>
+                                        <td>26/36</td>
+                                        <td>18/36.00</td>
+                                        <td>-</td>
+                                        <td>18/36</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>23BS205</td>
+                                        <td>SEMICONDUCTOR PHYSICS</td>
+                                        <td>35/36.00</td>
+                                        <td>-</td>
+                                        <td>35/36</td>
+                                        <td>27/36.00</td>
+                                        <td>-</td>
+                                        <td>27/36</td>
+                                        <td>20/36.00</td>
+                                        <td>-</td>
+                                        <td>20/36</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>23ES201</td>
+                                        <td>PROGRAMMING FOR PROBLEM SOLVING II</td>
+                                        <td>18/36.00</td>
+                                        <td>-</td>
+                                        <td>18/36</td>
+                                        <td>30/36.00</td>
+                                        <td>-</td>
+                                        <td>30/36</td>
+                                        <td>20/36.00</td>
+                                        <td>-</td>
+                                        <td>20/36</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/exam_result.js"></script>
+</body>
+</html>

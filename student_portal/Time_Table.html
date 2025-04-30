@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable | Student Dashboard</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/student/timeTable.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="sidebar-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav id="top-nav">
+        <div class="nav-content">
+            <button class="nav-menu-btn" onclick="toggleSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                </svg>
+                <span>Menu</span>
+            </button>
+            <span class="nav-title">Time Table</Table></span>
+            <button class="logout-btn" onclick="window.location.href='../index.html'">Logout</button>
+        </div>
+    </nav>
+    
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <a href="../dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="calender.html">
+                    <span>Academic Calendar</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="Time_Table.html">
+                    <span>Timetable</span>
+                </a>
+            </li>
+            <li>
+                <a href="attedance.html">
+                    <span>Attendance</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <span>Examination</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/>
+                    </svg>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="exam_schedule.html">Exam Schedule</a></li>  
+                        <li><a href="exam_result.html">Exam Result</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <a href="announcement.html">
+                    <span>Announcement</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <main class="timetable-container">
+        <div class="timetable-header">
+            <h1>TIMETABLE</h1>
+            <h2>DHARMSINH DESAI UNIVERSITY</h2>
+            <h3>Faculty of Technology</h3>
+        </div>
+        
+        <div class="timetable-actions">
+            <div class="week-navigation">
+                <button class="week-nav-btn" id="prev-week">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+                        <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+                    </svg>
+                </button>
+                <div class="week-display" id="current-week">
+                    <span>31-03-2025 to 04-04-2025</span>
+                </div>
+                <button class="week-nav-btn" id="next-week">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+                        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="date-picker">
+                <input type="week" id="week-selector" min="2024-07-01" max="2025-06-30">
+                <button class="go-btn" id="go-to-week">Go</button>
+            </div>
+            <button class="print-btn" onclick="window.print()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+                    <path d="M760-640v-120H200v120h-80v-200h720v200h-80Zm-560 80h560-560Zm120 80v-80h240v80H320Zm-120 80h560v-320H200v320Zm80-160h400-400Zm560 160v-80h80v200H680v-80h80v-40h-80v-80h80Z"/>
+                </svg>
+                Print
+            </button>
+        </div>
+        
+        <div class="timetable-wrapper">
+            <table class="timetable">
+                <thead>
+                    <tr>
+                        <th>Time Slot</th>
+                        <th>Monday<br><span class="date" id="mon-date">31-03-2025</span></th>
+                        <th>Tuesday<br><span class="date" id="tue-date">01-04-2025</span></th>
+                        <th>Wednesday<br><span class="date" id="wed-date">02-04-2025</span></th>
+                        <th>Thursday<br><span class="date" id="thu-date">03-04-2025</span></th>
+                        <th>Friday<br><span class="date" id="fri-date">04-04-2025</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:30 AM to 10:30 AM</td>
+                        <td class="holiday" rowspan="8">Holiday (Ramzan Eid)</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10:45 AM to 11:40 AM</td>
+                        <td rowspan="3">Batch-B3 PPS-2 (Lab)<br><span class="location">(CRC)</span></td>
+                        <td></td>
+                        <td></td>
+                        <td>PPS-2 (Lecture)<br><span class="location">(CRC)</span></td>
+                    </tr>
+                    <tr>
+                        <td>11:45 AM to 12:40 PM</td>
+                        <td rowspan="2">Batch-B3 HWW (Lab)<br><span class="location">(SPS)</span></td>
+                        <td rowspan="2">Batch-B3 SCP (Lab)<br><span class="location">(PHB)</span></td>
+                        <td rowspan="2">Batch-B3 English (Lab)<br><span class="location">(MA)</span></td>
+                    </tr>
+                    <tr>
+                        <td>12:45 PM to 01:40 PM</td>
+                    </tr>
+                    <tr>
+                        <td>01:40 PM to 02:30 PM</td>
+                        <td colspan="4" class="recess">Recess</td>
+                    </tr>
+                    <tr>
+                        <td>02:30 PM to 03:30 PM</td>
+                        <td>SCP (Lecture)<br><span class="location">(SPM)</span></td>
+                        <td>PPS-2 (Lecture)<br><span class="location">(CRC)</span></td>
+                        <td>PPS-2 (Lecture)<br><span class="location">(CRC)</span></td>
+                        <td>SCP (Tutorial)<br><span class="location">(JHB)</span></td>
+                    </tr>
+                    <tr>
+                        <td>03:30 PM to 04:30 PM</td>
+                        <td>PPS-2 (Lecture)<br><span class="location">(CRC)</span></td>
+                        <td>SCP (Lecture)<br><span class="location">(SPM)</span></td>
+                        <td>SCP (Lecture)<br><span class="location">(SPM)</span></td>
+                        <td>EVSTD (Lecture)<br><span class="location">(PCP)</span></td>
+                    </tr>
+                    <tr>
+                        <td>04:30 PM to 05:30 PM</td>
+                        <td>MATHS-2 (Lecture)<br><span class="location">(VIMAL)</span></td>
+                        <td>English (Lecture)<br><span class="location">(KA)</span></td>
+                        <td>MATHS-2 (Lecture)<br><span class="location">(KMP)</span></td>
+                        <td>EVSTD (Lecture)<br><span class="location">(SANJAY)</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

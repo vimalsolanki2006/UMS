@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Schedule | Student Dashboard</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/student/exam_schedule.css">
+</head>
+<body>
+    <div id="sidebar-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav id="top-nav">
+        <div class="nav-content">
+            <button class="nav-menu-btn" onclick="toggleSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                </svg>
+                <span>Menu</span>
+            </button>
+            <span class="nav-title">Exam Schedule</span>
+            <button class="logout-btn" onclick="window.location.href='../index.html'">Logout</button>
+        </div>
+    </nav>
+    
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <a href="../dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="calender.html">
+                    <span>Academic Calander</span>
+                </a>
+            </li>
+            <li>
+                <a href="Time_Table.html">
+                    <span>Timetable</span>
+                </a>
+            </li>
+            <li>
+                <a href="attedance.html">
+                    <span>Attendance</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn active">
+                    <span>Examination</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/>
+                    </svg>
+                </button>
+                <ul class="sub-menu show">
+                    <div>
+                        <li><a href="exam_schedule.html" class="active">Exam Schedule</a></li>  
+                        <li><a href="exam_result.html">Exam Result</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <a href="announcement.html">
+                    <span>Announcement</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="exam-schedule-main">
+        <div class="exam-schedule-container">
+            <h1>Exam Schedule</h1>
+            
+            <!-- Exam Type Navigation -->
+            <nav class="exam-type-nav">
+                <button class="exam-type-btn active" data-exam-type="internal">Internal Exams</button>
+                <button class="exam-type-btn" data-exam-type="external">External Exams</button>
+            </nav>
+            
+            <!-- Exam Schedule Content -->
+            <div class="exam-content">
+                <!-- Internal Exams Section -->
+                
+                <!-- Internal Exams Section -->
+                <section id="internal-exams" class="exam-section active">
+                    <div class="exam-header">
+                        <div class="exam-selector">
+                            <h2>AY 2024-25 | B.TECH | CE EC IT SEM - 2 | ICT</h2>
+                            <div class="select-wrapper">
+                                <select id="sessional-select" class="exam-select">
+                                    <option value="sessional1">SESSIONAL 1</option>
+                                    <option value="sessional2">SESSIONAL 2</option>
+                                    <option value="sessional3" selected>SESSIONAL 3</option>
+                                </select>
+                                <svg class="select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="exam-date-range">(15-05-2025 to 20-05-2025)</p>
+                    </div>
+                    
+                    <!-- Sessional 1 Content -->
+                    <div id="sessional1-content" class="sessional-content" style="display: none;">
+                        <div class="exam-list">
+                            <div class="exam-item">
+                                <div class="exam-date">
+                                    <span class="day">15</span>
+                                    <span class="month">NOV</span>
+                                    <span class="year">2024</span>
+                                </div>
+                                <div class="exam-details">
+                                    <h3>MATHEMATICS-II (23BS201)</h3>
+                                    <p class="exam-type">Theory</p>
+                                    <p class="exam-time">10:00 AM to 11:15 AM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="exam-item">
+                                <div class="exam-date">
+                                    <span class="day">17</span>
+                                    <span class="month">NOV</span>
+                                    <span class="year">2024</span>
+                                </div>
+                                <div class="exam-details">
+                                    <h3>SEMICONDUCTOR PHYSICS (23BS205)</h3>
+                                    <p class="exam-type">Theory</p>
+                                    <p class="exam-time">10:00 AM to 11:15 AM</p>
+                                </div>
+                            </div>
+
+                            <div class="exam-item">
+                                <div class="exam-date">
+                                    <span class="day">19</span>
+                                    <span class="month">NOV</span>
+                                    <span class="year">2024</span>
+                                </div>
+                                <div class="exam-details">
+                                    <h3>PROGRAMMING FOR PROBLEM SOLVING II (23ES201)</h3>
+                                    <p class="exam-type">Theory</p>
+                                    <p class="exam-time">10:00 AM to 11:15 AM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="no-schedule" style="display: none;">
+                                <p>No Sessional 1 Exam Schedule Found</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sessional 2 Content -->
+                    <div id="sessional2-content" class="sessional-content" style="display: none;">
+                        <div class="exam-list">
+                            <div class="exam-item">
+                                <div class="exam-date">
+                                    <span class="day">24</span>
+                                    <span class="month">MAR</span>
+                                    <span class="year">2025</span>
+                                </div>
+                                <div class="exam-details">
+                                    <h3>MATHEMATICS-II (23BS201)</h3>
+                                    <p class="exam-type">Theory</p>
+                                    <p class="exam-time">09:15 AM to 10:30 AM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="exam-item">
+                                <div class="exam-date">
+                                    <span class="day">26</span>
+                                    <span class="month">MAR</span>
+                                    <span class="year">2025</span>
+                                </div>
+                                <div class="exam-details">
+                                    <h3>SEMICONDUCTOR PHYSICS (23BS205)</h3>
+                                    <p class="exam-type">Theory</p>
+                                    <p class="exam-time">09:15 AM to 10:30 AM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="exam-item">
+                                <div class="exam-date">
+                                    <span class="day">28</span>
+                                    <span class="month">MAR</span>
+                                    <span class="year">2025</span>
+                                </div>
+                                <div class="exam-details">
+                                    <h3>PROGRAMMING FOR PROBLEM SOLVING II (23ES201)</h3>
+                                    <p class="exam-type">Theory</p>
+                                    <p class="exam-time">09:15 AM to 10:30 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sessional 3 Content (Default shown) -->
+                    <div id="sessional3-content" class="sessional-content">
+                        <div class="exam-list">
+                            <div class="exam-item">
+                                <div class="exam-date">
+                                    <span class="day">15</span>
+                                    <span class="month">MAY</span>
+                                    <span class="year">2025</span>
+                                </div>
+                                <div class="exam-details">
+                                    <h3>MATHEMATICS-II (23BS201)</h3>
+                                    <p class="exam-type">Theory</p>
+                                    <p class="exam-time">02:00 PM to 03:15 PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="exam-item">
+                                <div class="exam-date">
+                                    <span class="day">17</span>
+                                    <span class="month">MAY</span>
+                                    <span class="year">2025</span>
+                                </div>
+                                <div class="exam-details">
+                                    <h3>SEMICONDUCTOR PHYSICS (23BS205)</h3>
+                                    <p class="exam-type">Practical</p>
+                                    <p class="exam-time">10:00 AM to 12:00 PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="exam-item">
+                                <div class="exam-date">
+                                    <span class="day">20</span>
+                                    <span class="month">MAY</span>
+                                    <span class="year">2025</span>
+                                </div>
+                                <div class="exam-details">
+                                    <h3>PROGRAMMING FOR PROBLEM SOLVING II (23ES201)</h3>
+                                    <p class="exam-type">Practical</p>
+                                    <p class="exam-time">02:00 PM to 04:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- External Exams Section -->
+                <section id="external-exams" class="exam-section">
+                    <div class="exam-header">
+                        <h2>BT2410 - B.Tech. Sem-I Regular Exam Jan-2025</h2>
+                        <p class="exam-date-range">(16-01-2025 to 25-01-2025)</p>
+                    </div>
+                    
+                    <div class="exam-list">
+                        <!-- Exam Item 1 -->
+                        <div class="exam-item">
+                            <div class="exam-date">
+                                <span class="day">16</span>
+                                <span class="month">JAN</span>
+                                <span class="year">2025</span>
+                                <span class="day-name">Thursday</span>
+                            </div>
+                            <div class="exam-details">
+                                <h3>MATHEMATICS - I (23BS101)</h3>
+                                <p class="exam-type">Theory</p>
+                                <p class="exam-time">10:00 AM - 01:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Exam Item 2 -->
+                        <div class="exam-item">
+                            <div class="exam-date">
+                                <span class="day">17</span>
+                                <span class="month">JAN</span>
+                                <span class="year">2025</span>
+                                <span class="day-name">Friday</span>
+                            </div>
+                            <div class="exam-details">
+                                <h3>BASIC ELECTRICAL ENGINEERING (23ES104)</h3>
+                                <p class="exam-type">Theory</p>
+                                <p class="exam-time">10:00 AM - 01:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Exam Item 3 -->
+                        <div class="exam-item">
+                            <div class="exam-date">
+                                <span class="day">18</span>
+                                <span class="month">JAN</span>
+                                <span class="year">2025</span>
+                                <span class="day-name">Saturday</span>
+                            </div>
+                            <div class="exam-details">
+                                <h3>PROGRAMMING FOR PROBLEM SOLVING I (23ES105)</h3>
+                                <p class="exam-type">Theory</p>
+                                <p class="exam-time">10:00 AM - 01:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Exam Item 4 -->
+                        <div class="exam-item">
+                            <div class="exam-date">
+                                <span class="day">20</span>
+                                <span class="month">JAN</span>
+                                <span class="year">2025</span>
+                                <span class="day-name">Monday</span>
+                            </div>
+                            <div class="exam-details">
+                                <h3>YOGA AND WELLNESS (24HS102)</h3>
+                                <p class="exam-type">Practical</p>
+                                <p class="exam-time">10:00 AM - 12:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="no-schedule">
+                        <p>No External Exam Schedule Found</p>
+                    </div> -->
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/exam_schedule.js"></script>
+</body>
+</html>

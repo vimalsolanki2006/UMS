@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | Student Dashboard</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/student/attendance.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="sidebar-overlay"></div>
+    <!-- Navigation Bar -->
+    <nav id="top-nav">
+        <div class="nav-content">
+            <button class="nav-menu-btn" onclick="toggleSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                </svg>
+                <span>Menu</span>
+            </button>
+            <span class="nav-title">Attendance</span>
+            <button class="logout-btn" onclick="window.location.href='../index.html'">Logout</button>
+        </div>
+    </nav>
+    
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <a href="../dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="calender.html">
+                    <span>Academic Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="Time_Table.html">
+                    <span>Timetable</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="attedance.html">
+                    <span>Attendance</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <span>Examination</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                        <path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/>
+                    </svg>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="exam_schedule.html">Exam Schedule</a></li>  
+                        <li><a href="exam_result.html">Exam Result</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <a href="announcement.html">
+                    <span>Announcement</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="attendance-container">
+        <div class="attendance-header">
+            <h1>Attendance Record</h1>
+            <div class="student-info">
+                <span><strong>Name:</strong> Solanki Vimal Dilipbhai    </span>
+                <span><strong>Enrollment No:</strong> 24CEUBS148</span>
+                <span><strong>Program:</strong> B.Tech (Computer Science)</span>
+                <span><strong>Semester:</strong> 2 (2024-25)</span>
+            </div>
+        </div>
+        
+        <div class="attendance-controls">
+            <div class="filter-group">
+                <label for="month-filter">Month:</label>
+                <select id="month-filter" class="filter-select">
+                    <option value="all">All Months</option>
+                    <option value="mar">March 2025</option>
+                    <option value="apr" selected>April 2025</option>
+                    <option value="may">May 2025</option>
+                </select>
+            </div>
+            
+            <button class="filter-btn" id="apply-filters">Apply Filters</button>
+            <button class="print-btn" onclick="window.print()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+                    <path d="M760-640v-120H200v120h-80v-200h720v200h-80Zm-560 80h560-560Zm120 80v-80h240v80H320Zm-120 80h560v-320H200v320Zm80-160h400-400Zm560 160v-80h80v200H680v-80h80v-40h-80v-80h80Z"/>
+                </svg>
+                Print
+            </button>
+        </div>
+        
+        <div class="attendance-summary">
+            <div class="summary-card">
+                <div class="summary-value">85%</div>
+                <div class="summary-label">Overall Attendance</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-value">72/85</div>
+                <div class="summary-label">Classes Attended</div>
+            </div>
+            <div class="summary-card warning">
+                <div class="summary-value">13</div>
+                <div class="summary-label">Classes Missed</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-value">75%</div>
+                <div class="summary-label">Required Minimum</div>
+            </div>
+        </div>
+        
+        <div class="attendance-details">
+            <div class="details-header">
+                <h2>Detailed Attendance</h2>
+                <div class="legend">
+                    <span class="legend-item present"><span class="legend-badge"></span> Present</span>
+                    <span class="legend-item absent"><span class="legend-badge"></span> Absent</span>
+                    <span class="legend-item holiday"><span class="legend-badge"></span> Holiday</span>
+                    <span class="legend-item na"><span class="legend-badge"></span> N/A</span>
+                </div>
+            </div>
+            
+            <div class="table-wrapper">
+                <table class="attendance-matrix">
+                    <thead>
+                        <tr>
+                            <th>Date & Day</th>
+                            <th>PPS-2<br>(Programming)</th>
+                            <th>SCP<br>(Systematic)</th>
+                            <th>MATHS-2</th>
+                            <th>English</th>
+                            <th>EVSTD</th>
+                            <th>HWW</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Week 1 -->
+                        <tr class="week-header">
+                            <td colspan="7">Week 1 (01-04-2025 to 05-04-2025)</td>
+                        </tr>
+                        <tr>
+                            <td>01-04-2025<br>Tuesday</td>
+                            <td class="present">Present<br><span class="time">10:45-11:40</span></td>
+                            <td class="present">Present<br><span class="time">02:30-03:30</span></td>
+                            <td class="present">Present<br><span class="time">04:30-05:30</span></td>
+                            <td class="na">-</td>
+                            <td class="na">-</td>
+                            <td class="na">-</td>
+                        </tr>
+                        <tr>
+                            <td>02-04-2025<br>Wednesday</td>
+                            <td class="absent">Absent<br><span class="time">02:30-03:30</span></td>
+                            <td class="present">Present<br><span class="time">03:30-04:30</span></td>
+                            <td class="na">-</td>
+                            <td class="present">Present<br><span class="time">04:30-05:30</span></td>
+                            <td class="na">-</td>
+                            <td class="present">Present<br><span class="time">11:45-12:40</span></td>
+                        </tr>
+                        <tr>
+                            <td>03-04-2025<br>Thursday</td>
+                            <td class="present">Present<br><span class="time">03:30-04:30</span></td>
+                            <td class="present">Present<br><span class="time">03:30-04:30</span></td>
+                            <td class="present">Present<br><span class="time">04:30-05:30</span></td>
+                            <td class="na">-</td>
+                            <td class="na">-</td>
+                            <td class="na">-</td>
+                        </tr>
+                        <tr>
+                            <td>04-04-2025<br>Friday</td>
+                            <td class="present">Present<br><span class="time">12:45-01:40</span></td>
+                            <td class="present">Present<br><span class="time">02:30-03:30</span></td>
+                            <td class="na">-</td>
+                            <td class="na">-</td>
+                            <td class="present">Present<br><span class="time">03:30-04:30</span></td>
+                            <td class="na">-</td>
+                        </tr>
+                        <tr>
+                            <td>05-04-2025<br>Saturday</td>
+                            <td class="holiday" colspan="6">Weekend</td>
+                        </tr>
+                        
+                        <!-- Week 2 -->
+                        <tr class="week-header">
+                            <td colspan="7">Week 2 (08-04-2025 to 12-04-2025)</td>
+                        </tr>
+                        <tr>
+                            <td>08-04-2025<br>Tuesday</td>
+                            <td class="present">Present<br><span class="time">10:45-11:40</span></td>
+                            <td class="present">Present<br><span class="time">02:30-03:30</span></td>
+                            <td class="present">Present<br><span class="time">04:30-05:30</span></td>
+                            <td class="na">-</td>
+                            <td class="na">-</td>
+                            <td class="na">-</td>
+                        </tr>
+                        <tr>
+                            <td>09-04-2025<br>Wednesday</td>
+                            <td class="present">Present<br><span class="time">02:30-03:30</span></td>
+                            <td class="present">Present<br><span class="time">03:30-04:30</span></td>
+                            <td class="na">-</td>
+                            <td class="present">Present<br><span class="time">04:30-05:30</span></td>
+                            <td class="na">-</td>
+                            <td class="present">Present<br><span class="time">11:45-12:40</span></td>
+                        </tr>
+                        <tr>
+                            <td>10-04-2025<br>Thursday</td>
+                            <td class="present">Present<br><span class="time">03:30-04:30</span></td>
+                            <td class="present">Present<br><span class="time">03:30-04:30</span></td>
+                            <td class="present">Present<br><span class="time">04:30-05:30</span></td>
+                            <td class="na">-</td>
+                            <td class="na">-</td>
+                            <td class="na">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="subject-stats">
+            <h3>Subject-wise Attendance Summary</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="subject-name">PPS-2</div>
+                    <div class="stat-value">83%</div>
+                    <div class="stat-detail">15/18 classes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="subject-name">SCP</div>
+                    <div class="stat-value">89%</div>
+                    <div class="stat-detail">16/18 classes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="subject-name">MATHS-2</div>
+                    <div class="stat-value">78%</div>
+                    <div class="stat-detail">14/18 classes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="subject-name">English</div>
+                    <div class="stat-value">92%</div>
+                    <div class="stat-detail">11/12 classes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="subject-name">EVSTD</div>
+                    <div class="stat-value">85%</div>
+                    <div class="stat-detail">11/13 classes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="subject-name">HWW</div>
+                    <div class="stat-value">75%</div>
+                    <div class="stat-detail">9/12 classes</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="attendance-notice">
+            <h3>Important Notice:</h3>
+            <ul>
+                <li>Attendance below 75% may result in debarment from examinations.</li>
+                <li>Medical leaves must be submitted within 3 days of absence.</li>
+                <li>Contact your department for any attendance discrepancies.</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/student/attendance.js"></script>
+</body>
+</html>
