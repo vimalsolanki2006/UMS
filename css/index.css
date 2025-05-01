@@ -203,134 +203,100 @@ body {
     padding-left: 3em;
 }
 
-/* Main Content */
-main {
-    padding: min(30px, 5%);
-    margin-top: 70px;
-    background-color: var(--base-clr);
-    color: var(--text-clr);
-    transition: transform 0.3s ease;
-}
-
-.container {
-    border: 1px solid var(--line-clr);
-    border-radius: 1em;
-    margin-bottom: 20px;
-    padding: min(3em, 5%);
+/* ===== FOOTER STYLES ===== */
+.main-footer {
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-top: 1px solid var(--line-clr);
+    padding: 20px 0;
+    margin-top: 30px;
+    width: 100%;
 }
 
-.container h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1em;
-    color: var(--accent-clr);
-}
-
-.container p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--secondary-text-clr);
-}
-
-/* Dashboard Stats */
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5em;
-    margin-top: 1.5em;
-}
-
-.stat-card {
-    background-color: white;
-    padding: 1.5em;
-    border-radius: 0.5em;
-    border: 1px solid var(--line-clr);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.stat-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.stat-card h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 0.5em;
-    color: var(--text-clr);
-}
-
-.stat-card p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent-clr);
-    margin-bottom: 0.5em;
-}
-
-.stat-card small {
-    font-size: 0.875rem;
-    color: var(--secondary-text-clr);
-}
-
-/* Activity List */
-.activity-list {
-    list-style: none;
-    margin-top: 1.5em;
-}
-
-.activity-list li {
-    background-color: white;
-    padding: 1em;
-    border-radius: 0.5em;
-    border: 1px solid var(--line-clr);
-    margin-bottom: 0.75em;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    gap: 15px;
 }
 
-.activity-list li:hover {
-    background-color: #f5f5f5;
-    transform: translateX(5px);
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 25px;
+    padding: 0 15px;
 }
 
-.activity-list li::before {
-    content: "•";
-    color: var(--accent-clr);
-    font-size: 1.5em;
-    line-height: 0;
-    margin-right: 10px;
-}
-
-/* Quick Actions */
-.quick-actions .stat-card {
-    cursor: pointer;
-}
-
-.quick-actions .stat-card a {
-    color: var(--accent-clr);
+.footer-links a {
+    color: var(--secondary-text-clr);
     text-decoration: none;
+    font-size: 0.85rem;
     font-weight: 500;
+    transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
-.quick-actions .stat-card:hover a {
+.footer-links a:hover {
+    color: var(--accent-clr);
     text-decoration: underline;
 }
 
-/* Footer */
-footer {
-    background-color: white;
-    border-top: 1px solid var(--line-clr);
-    padding: 15px 20px;
-    text-align: center;
-    margin-top: 30px;
+.footer-copyright {
     color: var(--secondary-text-clr);
-    font-size: 0.875rem;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .footer-content {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 15px 0;
+        margin-top: 20px;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+        gap: 12px;
+    }
+    
+    .footer-links {
+        gap: 12px 20px;
+    }
+    
+    .footer-links a {
+        font-size: 0.8rem;
+    }
+    
+    .footer-copyright {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .footer-links a {
+        white-space: normal;
+        text-align: center;
+    }
+    
+    .footer-copyright {
+        margin-top: 0;
+    }
 }
 
 /* Responsive Design */
