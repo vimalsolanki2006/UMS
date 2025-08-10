@@ -16,7 +16,7 @@ You can view the student dashboard UI by visiting the following link:
 
 Use the following credentials to log in:
 
-- **Username**: `student`  
+- **Username**: `student`
 - **Password**: `student123`
 
 > Note: This is a static UI. Login fields do not perform real authentication.
@@ -124,4 +124,4 @@ Use the following credentials to log in:
 ## 📌 Author
 
 - 🔗 GitHub: [vimalsolanki2006](https://github.com/vimalsolanki2006)
-- 🏫 Student, DDU College – Computer Engineering
+- 🏫 Student, Dharmsinh Desai University – Computer Engineering
